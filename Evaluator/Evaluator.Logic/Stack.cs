@@ -15,7 +15,9 @@
 
         public bool IsEmpty => _top == 0;
 
-        public bool IsFull => _top == N;
+        public bool IsFull => _top == N;    
+
+        public T GetItemInTop() => _stack[_top - 1];
 
         public void Push(T item)
         {
@@ -35,7 +37,7 @@
                 throw new Exception("Stack empty.");
             }
 
-            var item = _stack[_top];
+            var item = _stack[_top - 1];
             _top--;
             return item;
         }
