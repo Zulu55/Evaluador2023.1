@@ -22,11 +22,16 @@
                 }
                 else
                 {
-                    var number = (double)postfix[i] - 48;
+                    var number = ToDouble(postfix[i]);
                     stack.Push(number);
                 }
             }
             return stack.Pop();
+        }
+
+        private static double ToDouble(char number)
+        {
+            return (double)number - 48;
         }
 
         private static double Calculate(double number1, char @operator, double number2)
